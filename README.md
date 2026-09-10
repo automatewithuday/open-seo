@@ -2,6 +2,8 @@
 
 > Open source alternative to Semrush and Ahrefs
 
+> **Martechs fork.** This repository is a customised, self-hosted deployment of OpenSEO for martechs.io. It adds one auth change so a Cloudflare Access service token can call the MCP, plus operator scripts and notes. See [FORK.md](FORK.md) before using it. Upstream is [every-app/open-seo](https://github.com/every-app/open-seo).
+
 OpenSEO is an SEO tool for _the people_. If tools like Semrush or Ahrefs are too expensive or bloated, OpenSEO is a pay-as-you-go alternative that you actually control.
 
 > All-in-one SEO tool for you and your AI agent.
