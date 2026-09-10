@@ -63,6 +63,8 @@ pnpm test
 pnpm deploy:selfhost
 ```
 
+`deploy:selfhost` builds and typechecks, then runs Alchemy. In a non-interactive shell Alchemy prints the plan and stops, asking for `--yes`; finish with `pnpm alchemy deploy --env-file .env.selfhost --stage selfhost --yes`. Confirm with `./verify-mcp.sh` afterwards.
+
 Conflicts, if any, are confined to `src/middleware/ensure-user/cloudflareAccess.ts`, its test, `.env.selfhost.example`, `alchemy.run.ts`, and `src/env.d.ts`. `README.md` carries only a short pointer to this file so it merges cleanly.
 
 ## What is never committed
