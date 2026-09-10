@@ -1,3 +1,4 @@
+import type * as Jose from "jose";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const { mockEnv, jwtVerify, resolveSharedWorkspaceContext } = vi.hoisted(
@@ -18,7 +19,7 @@ const { mockEnv, jwtVerify, resolveSharedWorkspaceContext } = vi.hoisted(
 
 vi.mock("cloudflare:workers", () => ({ env: mockEnv }));
 vi.mock("jose", async (importOriginal) => {
-  const actual = await importOriginal<typeof import("jose")>();
+  const actual = await importOriginal<typeof Jose>();
   return {
     ...actual,
     createRemoteJWKSet: () => ({}),
