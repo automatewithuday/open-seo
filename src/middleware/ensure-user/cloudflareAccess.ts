@@ -96,8 +96,9 @@ export async function resolveCloudflareAccessContext(
 
   // Service tokens (Access "Service Auth" policies) carry no email: only a
   // `common_name` equal to the token's client id. Exactly one configured token
-  // is allowed in, acting as the configured operator so it shares their
-  // workspace, projects, and research log.
+  // is allowed in, as its own user inside the shared workspace. The email must
+  // be dedicated to the token: user emails are unique, so reusing a person's
+  // address would block that person's own login.
   const serviceClientId = env.MCP_SERVICE_TOKEN_CLIENT_ID?.trim();
   const serviceEmail = env.MCP_SERVICE_TOKEN_EMAIL?.trim();
   const commonName =
